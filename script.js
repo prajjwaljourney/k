@@ -79,16 +79,15 @@ document.addEventListener('DOMContentLoaded', function() {
     createSparkles();
     createFloatingEmojis();
     
-    // Load Videos from video folder
+    // Load Videos from Google Drive
     const gallery = document.getElementById('photoGallery');
 
     if (gallery) {
-        // List of video files in the video folder
+        // Google Drive video link (converted from sharing link)
+        // Original: https://drive.google.com/file/d/1-4FB40sNDSLkAN2cOBGjEAfCFriQIS_U/view?usp=sharing
         const videoFiles = [
-            'video/1000197178.mp4'
-            // Add more video files here if needed, e.g.:
-            // 'video/another-video.mp4',
-            // 'video/third-video.mp4'
+            'https://drive.google.com/uc?export=view&id=1-4FB40sNDSLkAN2cOBGjEAfCFriQIS_U'
+            // Add more video files here if needed
         ];
 
         // Load and display videos
