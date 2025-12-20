@@ -372,7 +372,12 @@ h1 {
     border-radius: 15px;
     transition: transform 0.3s ease;
     background: #000;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 .video-item video {
@@ -382,7 +387,6 @@ h1 {
 .video-item iframe {
     pointer-events: auto;
 }
-
 @media (max-width: 768px) {
     .video-item {
         max-width: 100%;
