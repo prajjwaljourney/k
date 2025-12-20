@@ -79,22 +79,28 @@ document.addEventListener('DOMContentLoaded', function() {
     createSparkles();
     createFloatingEmojis();
     
-    // Load Videos from Google Drive
+    // Load Videos from Google Drive using iframe embed
     const gallery = document.getElementById('photoGallery');
 
     if (gallery) {
-        // Google Drive video link (converted from sharing link)
-        // Original: https://drive.google.com/file/d/1-4FB40sNDSLkAN2cOBGjEAfCFriQIS_U/view?usp=sharing
+        // Google Drive video embed links
+        // File ID: 1-4FB40sNDSLkAN2cOBGjEAfCFriQIS_U
         const videoFiles = [
-            'https://drive.google.com/uc?export=view&id=1-4FB40sNDSLkAN2cOBGjEAfCFriQIS_U'
-            // Add more video files here if needed
+            {
+                id: '1-4FB40sNDSLkAN2cOBGjEAfCFriQIS_U',
+                title: 'Birthday Video'
+            }
+            // Add more videos here if needed:
+            // { id: 'YOUR_FILE_ID', title: 'Video Title' }
         ];
 
-        // Load and display videos
-        videoFiles.forEach(videoPath => {
+        // Load and display videos using iframe embed (Google Drive requires iframe)
+        videoFiles.forEach(video => {
             const div = document.createElement('div');
             div.className = 'video-item';
-            div.innerHTML = `<video src="${videoPath}" controls></video>`;
+            // Google Drive preview embed - this is the only reliable way to play Google Drive videos
+            const embedUrl = `https://drive.google.com/file/d/${video.id}/preview`;
+            div.innerHTML = `<iframe src="${embedUrl}" allow="autoplay; fullscreen" allowfullscreen frameborder="0"></iframe>`;
             gallery.appendChild(div);
         });
     }
