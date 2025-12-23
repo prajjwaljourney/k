@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Create floating emojis - reduced amount
     function createFloatingEmojis() {
-        const emojis = ['🎉', '🎂', '🎈', '🎁', '✨', '🌟'];
+        const emojis = ['🎉', '🎂', '🎁', '✨', '🌟'];
         const emojiCount = 8;
         
         for (let i = 0; i < emojiCount; i++) {
@@ -105,3 +105,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
