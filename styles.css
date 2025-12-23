@@ -6,10 +6,10 @@
 
 body {
     font-family: 'Georgia', serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #fff;
+    background: linear-gradient(135deg, #3a0ca3 0%, #f72585 100%);
+    color: #ffffff;
     overflow-x: hidden;
-    line-height: 1.45; /* reduced */
+    line-height: 1.45;
 }
 
 .container {
@@ -44,7 +44,7 @@ h1 {
 }
 
 .celebration-section {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.18);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 28px;
@@ -136,27 +136,16 @@ h1 {
     position: absolute;
     width: 4px;
     height: 4px;
-    background: #ffd700;
+    background: #4cc9f0;
     border-radius: 50%;
     animation: sparkleFloat linear infinite;
 }
 
 @keyframes sparkleFloat {
-    0% {
-        transform: translateY(0) scale(0);
-        opacity: 0;
-    }
-    20% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    80% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-80px) scale(0);
-        opacity: 0;
-    }
+    0% { transform: translateY(0) scale(0); opacity: 0; }
+    20% { opacity: 1; transform: scale(1); }
+    80% { opacity: 1; }
+    100% { transform: translateY(-80px) scale(0); opacity: 0; }
 }
 
 /* Floating Emoji Animation */
@@ -169,21 +158,13 @@ h1 {
 }
 
 @keyframes emojiFloat {
-    0% {
-        transform: translateY(0) translateX(0) rotate(0deg);
-        opacity: 1;
-    }
-    50% {
-        transform: translateX(15px) rotate(180deg);
-    }
-    100% {
-        transform: translateY(-120vh) translateX(-15px) rotate(360deg);
-        opacity: 0;
-    }
+    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 1; }
+    50% { transform: translateX(15px) rotate(180deg); }
+    100% { transform: translateY(-120vh) translateX(-15px) rotate(360deg); opacity: 0; }
 }
 
 .section {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.18);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 22px;
@@ -195,7 +176,7 @@ h1 {
     font-size: 1.7em;
     margin-bottom: 12px;
     text-align: center;
-    color: #ffd700;
+    color: #4cc9f0;
 }
 
 .section p {
@@ -270,7 +251,7 @@ h1 {
     font-size: 1em;
     font-weight: bold;
     margin-bottom: 8px;
-    color: #ffd700;
+    color: #4cc9f0;
     text-align: center;
 }
 
@@ -282,7 +263,7 @@ h1 {
 }
 
 .photo-section {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.18);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 40px;
@@ -356,29 +337,12 @@ h1 {
     transition: transform 0.3s ease;
     background: #000;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     margin: auto;
-}
-
-.video-item video {
-    object-fit: contain;
 }
 
 .video-item iframe {
     pointer-events: auto;
-}
-@media (max-width: 768px) {
-    .video-item {
-        max-width: 100%;
-        aspect-ratio: 9/16;
-    }
-}
-
-.video-item:hover iframe {
-    transform: scale(1.01);
 }
 
 input[type="file"] {
@@ -393,14 +357,14 @@ input[type="file"] {
     margin: 40px 0;
     animation: fadeInUp 1.5s ease;
     box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-    border-left: 5px solid rgba(255,215,0,0.5);
+    border-left: 5px solid #4cc9f0;
 }
 
 .letter-section h2 {
     font-size: 2em;
     margin-bottom: 30px;
     text-align: center;
-    color: #ffd700;
+    color: #4cc9f0;
 }
 
 .letter-section p {
@@ -419,14 +383,16 @@ input[type="file"] {
     font-size: 1.6em;
     margin-top: 40px;
     font-style: italic;
-    color: #ffd700;
+    color: #fcd34d;
 }
 
 .divider {
     text-align: center;
     font-size: 2em;
-    margin: 40px 0;
-    opacity: 0.6;
+    margin: 26px 0;
+    opacity: 0.85;
+    color: #4cc9f0;
+    text-shadow: 0 0 10px rgba(76,201,240,0.6);
 }
 
 @keyframes fadeIn {
@@ -435,63 +401,21 @@ input[type="file"] {
 }
 
 @keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 768px) {
     h1 { font-size: 2.5em; }
     .section { padding: 30px 20px; }
-    .letter-section { padding: 30px 20px; }
-}
-
-/* ===== MOBILE COMPACT FIX FOR LETTER SECTION ===== */
-@media (max-width: 768px) {
-
-    .divider {
-        margin: 18px 0;      /* was 40px */
-        font-size: 1.4em;    /* slightly smaller */
-    }
-
-    .letter-section {
-        margin: 18px 0;      /* was 40px */
-        padding: 18px 14px;  /* was 30px 20px */
-    }
-
-    .letter-section h2 {
-        margin-bottom: 12px; /* was 30px */
-        font-size: 1.5em;
-    }
-
-    .letter-section p {
-        margin-bottom: 8px;  /* BIG FIX: was 25px */
-        line-height: 1.35;   /* tighter reading */
-        font-size: 0.98em;
-    }
-
-    .calm-text {
-        margin-bottom: 8px;  /* ensure same spacing */
-    }
-
-    .signature {
-        margin-top: 14px;    /* was 40px */
-        font-size: 1.2em;
-    }
+    .letter-section { padding: 18px 14px; margin: 18px 0; }
+    .letter-section h2 { margin-bottom: 12px; font-size: 1.5em; }
+    .letter-section p { margin-bottom: 8px; line-height: 1.35; font-size: 0.98em; }
+    .signature { margin-top: 14px; font-size: 1.2em; }
+    .divider { margin: 18px 0; font-size: 1.4em; }
 }
